@@ -5,6 +5,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Practice with jQuery Events</title>
+
+	<style>
+		#divAlert, #divSpan {
+			border: 1px solid black;
+			margin: 10px 0px;
+		}
+	</style>
+
 </head>
 <body>
 	<button id="btn1">Button</button>
@@ -34,7 +42,7 @@
 		<button type="submit">Submit</button>
 	</form>
 
-	<script src="./js/jquery-3.4.1.min.js"></script>
+	<script src="./node_modules/jquery/dist/jquery.min.js"></script>
 	<script>
 	
 		// Step 16
@@ -61,13 +69,13 @@
 		$("#divAlert").height("400px");
 		$("#divAlert").width("400px");
 		$("#divAlert").on("mouseenter", function () {
-			// alert("Mouse entered");
+			alert("Mouse entered");
 		})
 		$("#divAlert").on("mouseleave", function () {
-			// alert("Mouse left");
+			alert("Mouse left");
 		})
 		$("#divAlert").on("click", function () {
-			// alert("Mouse clicked");
+			alert("Mouse clicked");
 		})
 
 		// Step 21
@@ -83,11 +91,11 @@
 			$("span").text("Mouse: clicked");
 		})
 
-		// Step 22 ??
+		// Step 22
 		$("a").click(function (e) {
 			e.preventDefault();
 			$(this).css("color", "red");
-			alert(this);
+			alert("Node name: " + e.target.nodeName);
 		})
 	
 		// Step 23
